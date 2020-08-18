@@ -1,3 +1,7 @@
+# GitHub Release Monitor
+
+A tool to keep track of releases made by GitHub repos.   This repository contains an example setup that can be used to create an app.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
