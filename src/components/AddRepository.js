@@ -13,7 +13,9 @@ const AddRepository = ({ onAdd }) => {
 
         // PLACEHOLDER VALUES
         let title = 'Default Title'
-        let release_date = 'Default Date'
+        let owner = null
+        let release_date = null
+        let body = ''
         let new_release = true
 
 
@@ -32,27 +34,22 @@ const AddRepository = ({ onAdd }) => {
         let split_url = url.replace(/\/$/, "");
         split_url = split_url.split('/');
         title = split_url[split_url.length - 1]
+        owner = split_url[split_url.length - 2]
         octokit.request('GET /repos/{owner}/{repo}/releases', {
-            owner: split_url[split_url.length - 2],
+            owner: owner,
             repo: title
         }).then(
             (response) => {
-            console.log(response);
-            release_date = response.data[0]['published_at']
-            onAdd({ url, title, release_date, new_release });
+            if (response.data.length > 0) {
+                release_date = response.data[0]['published_at']
+                body = response.data[0]['body']
+            }
+            onAdd({ url, title, owner, release_date, body, new_release});
+            setUrl('');
             }
         );
 
 
-
-
-
-
-        // ADD FUNC to get github via SDK
-
-        // onAdd({ url, title, release_date, new_release });
-
-        setUrl('');
     }
 
     return (

@@ -11,8 +11,10 @@ body {
 }
 
 .container {
-  max-width: 500px;
-  margin: 30px auto;
+  /* max-width: 80em; */
+  width: 80%;
+  height: 100%;
+  margin: 2em auto;
   overflow: auto;
   min-height: 300px;
   border: 1px solid steelblue;
@@ -22,9 +24,11 @@ body {
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 20px;  
+  padding: 3px;
+  border-bottom: 3px solid lightgray;
 }
 
 .btn {
@@ -61,8 +65,9 @@ body {
   cursor: pointer;
 }
 
-.repository.reminder {
-  border-left: 5px solid green;
+.repository.newrelease {
+  border: 5px solid green;
+
 }
 
 .repository h3 {
@@ -70,6 +75,20 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
+
+.markdownDiv {
+  max-height: auto;
+  transition: height ease 5s;
+  list-style: georgian inside;
+  background-color: lightyellow;
+  border-radius: 3px;
+}
+
+.markdownDivInner {
+  margin: 10px;
+}
+
 
 .add-form {
   margin-bottom: 40px;
@@ -107,6 +126,7 @@ body {
 }
 
 footer {
+  height: 1000px;
   margin-top: 30px;
   text-align: center;
 

@@ -1,12 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Repository from './Repository'
 
-const Repositories = ({ repositories, onDelete }) => {
+const Repositories = ({ repositories, onDelete, onToggle}) => {    
     return (
         <>
             {repositories.map((repo) => (
-                <Repository key={repo.id} repository={repo} onDelete={onDelete} />
+                <Repository key={repo.id} repository={repo} onDelete={onDelete} onToggle={onToggle}/>
             ))}
         </>
     )
