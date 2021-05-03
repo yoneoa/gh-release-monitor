@@ -9,6 +9,7 @@ import gfm from 'remark-gfm'
 const Repository = ({ id, repository, onDelete, onToggle }) => {
     const [showReleaseNotes, setShowReleaseNotes] = useState(false);
 
+    // Encapsulate our onDelete func in order to stop propogation to parent div
     function handleClick(e) {
         onDelete(repository.id)
         e.stopPropagation()
@@ -21,9 +22,9 @@ const Repository = ({ id, repository, onDelete, onToggle }) => {
 
                 <div onClick={() => setShowReleaseNotes(!showReleaseNotes)}>
                     <h4>Owner: {repository.owner}</h4>
-                    <h4>Release Date: {repository.release_date ? repository.release_date : "No Published Releases!"}</h4>
+                    <h4>Release Date: {repository.release_date ? new Date(repository.release_date).toLocaleString() : "No Published Releases!"}</h4>
                 </div>
-                {showReleaseNotes && <div className='markdownDiv'><div className='markdownDivInner'><ReactMarkdown remarkPlugins={[gfm]}>{repository.body}</ReactMarkdown></div></div>}
+                {showReleaseNotes && <div className='markdownDiv'><div className='markdownDivInner'><ReactMarkdown remarkPlugins={[gfm]}>{repository.body ? repository.body : "**No release notes to show**"}</ReactMarkdown></div></div>}
 
             </div>
         </div>

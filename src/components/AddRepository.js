@@ -56,7 +56,7 @@ const AddRepository = ({ onAdd }) => {
         <form className='add-form' onSubmit={onSubmit}>
             <div className='form-control form-control-check'>
                 <label>Repository URL</label>
-                <input type='text' placeholder='Add Repository by URL' value={url} onChange={(e) => setUrl(e.target.value)} />
+                <input type='text' placeholder='Add Repository by URL (ie https://github.com/lumanu/gh-release-monitor)' value={url} onChange={(e) => setUrl(e.target.value)} />
             </div>
             <input type='submit' value='Save Repository' className='btn btn-block' />
         </form>

@@ -1,31 +1,3 @@
 {
-  "repositories": [
-    {
-      "url": "https://github.com/bradtraversy/react-crash-2021",
-      "title": "react-crash-2021",
-      "owner": "bradtraversy",
-      "release_date": "2020-05-06T13:51:56Z",
-      "body": "",
-      "new_release": false,
-      "id": 4
-    },
-    {
-      "url": "https://github.com/grafana-tools/sdk",
-      "title": "sdk",
-      "owner": "grafana-tools",
-      "release_date": "2020-05-06T13:51:56Z",
-      "body": "First release in two years. List of closed pull requests is below:\r\n\r\n- #86 - @krya-kryak - Add SearchWithParams method\r\n- #85 - @Kuri-su - docs(readme.md): fix example\r\n- #84 - @K-Phoen - Add support for Stackdriver targets\r\n- #78 - @GiedriusS - Improve CI\r\n- #77 - @GiedriusS - sdk: add context.Context to REST calls\r\n- #67 - @masudur-rahman - Add FolderID to SetDashboard api request\r\n- #75 - @haseth - updated add and remove Tag code\r\n- #74 - @McEchean - Add Folder API support\r\n- #68 - @masudur-rahman - Add health check api\r\n- #73 - @GiedriusS - Fix GetDashboard API mess, update README\r\n- #69 - @UndeadJoe - Requests by uid\r\n- #70 - @GiedriusS - Support 1.12/1.11 & multiple Grafana versions\r\n- #66 - @pmenglund - add support for creating, patching, deleting and getting annotations\r\n- #60 - @K-Phoen - Expose public structs instead of anonymous ones\r\n- #65 - @GiedriusS - rest: org: add initial integration tests\r\n- #63 - @GiedriusS - *: run integration tests against 6.6.0\r\n- #62 - @GiedriusS - integration: user: add\r\n- #61 - @GiedriusS - README: update\r\n- #59 - @GiedriusS - integration: add admin tests, make things stricter\r\n- #58 - @GiedriusS - Add datasource integration tests, refactor\r\n- #57 - @GiedriusS - alertnotification: initial attempt at integration tests\r\n- #53 - @GiedriusS - Add alertnotification API support\r\n- #56 - @masudur-rahman - Handle error for (Client).doRequest()\r\n- #54 - @K-Phoen - Fix the definition of dashboard annotations to allow annotation types and tags\r\n- #55 - @K-Phoen - Fix gofmt error\r\n- #52 - @GiedriusS - datasource: add secureJsonData\r\n- #51 - @jasonatran - Fix status struct\r\n- #50 - @fredwangwang - add Row type\r\n- #48 - @rvdwijngaard - Remove build flag from rest-org.go\r\n- #46 - @tdabasinskas - Increase the limit of users returned\r\n- #43 - @tdabasinskas - Support getting all organizations\r\n- #45 - @tdabasinskas - Support getting actual organization preferences\r\n- #44 - @tdabasinskas - Update README REST API realization status\r\n- #42 - @y3llowcake - add settings for groupby terms for logstash target\r\n- #41 - @tdabasinskas - Update and unify comments for REST functions\r\n- #39 - @tdabasinskas - Allow to update organization preferences\r\n- #38 - @mcristina422 - update to go modules\r\n- #37 - @tdabasinskas - Add support for /api/admin/users/:id/permissions endpoint\r\n- #35 - @y3llowcake - export singlestat ValueMap and Column Types, CommonPannel and fix tests\r\n- #34 - @y3llowcake - export ValueMap type\r\n- #33 - @thevan4 - Read grafana response\r\n- #32 - @Yasumoto - Add support for Panel Description\r\n- #31 - @y3llowcake - Add missing annotation fields\r\n- #29 - @y3llowcake - add AlertNotification.UID\r\n- #28 - @y3llowcake - Add Alert definitions, Axis.Label, Cloudwatch fields\r\n- #26 - @ntindall - GraphPanel has support for graphed thresholds\r\n- #25 - @tonglil - Update link\r\n- #22 - @IndraGunawan - move test to *_test package\r\n- #23 - @IndraGunawan - Change data type\r\n- #21 - @bradbeam - Adding alias for style definition\r\n- #18 - @bradbeam - Adding support for grafana 5 dashboards\r\n- #20 - @mlclmj - Additional Organization Implementation",
-      "new_release": false,
-      "id": 8
-    },
-    {
-      "url": "https://github.com/yoneoa/ankidecks",
-      "title": "ankidecks",
-      "owner": "yoneoa",
-      "release_date": "2021-05-03T17:02:16.000Z",
-      "body": "",
-      "new_release": false,
-      "id": 9
-    }
-  ]
+  "repositories": []
 }
