@@ -2,7 +2,8 @@ import React from 'react';
 import './index.css';
 import Header from './components/Header'
 import Repositories from './components/Repositories'
-import AddRepository from './components/AddRepository'
+// import AddRepository from './components/AddRepository' // No Longer used 
+import Search from './components/Search'
 import { useState, useEffect } from 'react'
 import { Octokit } from 'octokit';
 
@@ -35,13 +36,13 @@ function App() {
     return data
   }
 
-  // Fetch a single repo
-  const fetchRepository = async (id) => {
-    const response = await fetch(`http://localhost:3123/repositories/${id}`)
-    const data = await response.json()
+  // Fetch a single repo (NOT USED)
+  // const fetchRepository = async (id) => {
+  //   const response = await fetch(`http://localhost:3123/repositories/${id}`)
+  //   const data = await response.json()
 
-    return data
-  }
+  //   return data
+  // }
 
 
   // Add repo to db
@@ -69,8 +70,6 @@ function App() {
 
   // Toggle's green highlight to notify user's of a new release
   const toggleIsNewRelease = async (id) => {
-    const repoToToggle = await fetchRepository(id)
-    // const updRepo = { ...repoToToggle, new_release: !repoToToggle.new_release }
     const response = await fetch(`http://localhost:3123/repositories/${id}`, {
       method: "PATCH",
       headers: { 'Content-Type': 'application/json' },
@@ -138,7 +137,8 @@ function App() {
   return (
     <div className="container">
       <Header onAdd={() => setShowAddRepository(!showAddRepository)} showAdd={showAddRepository} onRefresh={refreshRepositories} />
-      {showAddRepository && <AddRepository onAdd={addRepository} />}
+      <Search onAdd={addRepository}/>
+      {/* {showAddRepository && <AddRepository onAdd={addRepository} />} */}
       <Repositories repositories={repositories} onDelete={deleteRepository} onToggle={toggleIsNewRelease}/>
     </div>
     
