@@ -20,12 +20,12 @@ function App() {
       setRepositories(sortRepositories(reposFromServer))
     }
     getRepositories()
-    }, [])
+  }, [])
 
 
   // Helper function to sort our list of repositories, this is to propagate new releases to the top on page load/ refresh
   const sortRepositories = (items) => {
-    const sorted = [...items].sort((a,b) => (b.new_release - a.new_release || (b.release_date ? new Date(b.release_date) : null) - (a.release_date ? new Date(a.release_date) : null)))
+    const sorted = [...items].sort((a, b) => (b.new_release - a.new_release || (b.release_date ? new Date(b.release_date) : null) - (a.release_date ? new Date(a.release_date) : null)))
     return sorted
   }
 
@@ -80,7 +80,7 @@ function App() {
     const data = response.json()
     setRepositories(
       repositories.map((repository) =>
-        repository.id === id ? {...repository, new_release: data.new_release} : repository
+        repository.id === id ? { ...repository, new_release: data.new_release } : repository
       )
     )
   }
@@ -117,10 +117,10 @@ function App() {
       }
       setRepositories(
         sortRepositories(updatedRepos).map((repository) =>
-          repository.id === id ? {...repository, new_release: repo.new_release, newDate} : repository
+          repository.id === id ? { ...repository, new_release: repo.new_release, newDate } : repository
         )
-      )  
-  }
+      )
+    }
 
   }
 
@@ -137,11 +137,11 @@ function App() {
   return (
     <div className="container">
       <Header onAdd={() => setShowAddRepository(!showAddRepository)} showAdd={showAddRepository} onRefresh={refreshRepositories} />
-      <Search onAdd={addRepository}/>
+      <Search onAdd={addRepository} />
       {/* {showAddRepository && <AddRepository onAdd={addRepository} />} */}
-      <Repositories repositories={repositories} onDelete={deleteRepository} onToggle={toggleIsNewRelease}/>
+      <Repositories repositories={repositories} onDelete={deleteRepository} onToggle={toggleIsNewRelease} />
     </div>
-    
+
   );
 }
 

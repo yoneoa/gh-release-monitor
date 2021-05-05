@@ -1,3 +1,22 @@
 {
-  "repositories": []
+  "repositories": [
+    {
+      "url": "https://github.com/pytorch/pytorch",
+      "title": "pytorch",
+      "owner": "pytorch",
+      "release_date": "2021-03-25T16:07:08.000Z",
+      "body": "# PyTorch 1.8.1 Release Notes\r\n\r\n* New Features\r\n* Improvements\r\n* Bug Fixes\r\n* Documentation\r\n\r\n# New Features\r\n\r\n### Revamp of profiling tools in `torch.profiler`\r\n\r\nThe [`torch.profiler`](https://pytorch.org/docs/stable/profiler.html) submodule is now available. It leveraged the newly released kineto library for profiling.\r\nYou can find more details in this blogpost: https://pytorch.org/blog/introducing-pytorch-profiler-the-new-and-improved-performance-tool/\r\n\r\n### Enable use of autocast for pytorch xla ([#48570](https://github.com/pytorch/pytorch/pull/48570))\r\n\r\nThe `torch.cuda.autocast` package can now be used in conjunction with torch xla to provide easy mixed-precision training.\r\n\r\n# Improvements\r\n\r\n* Make `torch.` submodule import more autocomplete-friendly ([#52339](https://github.com/pytorch/pytorch/pull/52339))\r\n* Add support in ONNX for `torch.{isinf,any,all}` ([#53529](https://github.com/pytorch/pytorch/pull/53529))\r\n* Replace thrust with cub in GPU implementation of `torch.randperm` for performance ([#54537](https://github.com/pytorch/pytorch/pull/54537))\r\n\r\n# Bug fixes\r\n\r\n## Misc\r\n\r\n* Fixes for `torch.distributions` validation checks ([](https://github.com/pytorch/pytorch/commit/e991cdaf58bda3169a284e2dead254262b450787)[#53763](https://github.com/pytorch/pytorch/pull/53763)[](https://github.com/pytorch/pytorch/commit/e991cdaf58bda3169a284e2dead254262b450787))\r\n* Allow changing the padding vector for `nn.Embedding` ([#53447](https://github.com/pytorch/pytorch/pull/53447))\r\n* Fix TensorPipe for large copies and interoperability with CUDA ([#53804](https://github.com/pytorch/pytorch/pull/53804))\r\n* Properly de-sugar `Ellipsis` in TorchScript ([#53766](https://github.com/pytorch/pytorch/pull/53766))\r\n* Stop using OneDNN for group convolutions when groups size is a multiple of `24` ([#54015](https://github.com/pytorch/pytorch/pull/54015))\r\n* Use `int8_t` instead of `char` in `{load,store}_scalar` ([#52616](https://github.com/pytorch/pytorch/pull/52616))\r\n* Make ideep honor `torch.set_num_thread` ([#53871](https://github.com/pytorch/pytorch/pull/53871))\r\n* Fix dimension out of range in `pixel_{un}shuffle` ([#54178](https://github.com/pytorch/pytorch/pull/54178))\r\n* Update kineto to fix libtorch builds ([#54205](https://github.com/pytorch/pytorch/pull/54205))\r\n* Fix distributed autograd CUDA stream synchronization for send/recv operations ([#54358](https://github.com/pytorch/pytorch/pull/54358))\r\n\r\n## ONNX\r\n\r\n* Update error handling in ONNX to avoid `ValueError` ([#53548](https://github.com/pytorch/pytorch/pull/53548))\r\n* Update assign output shape for nested structure and dict output ([#53311](https://github.com/pytorch/pytorch/pull/53311))\r\n* Update embedding export wrt `padding_idx` ([#53931](https://github.com/pytorch/pytorch/pull/53931))\r\n\r\n# Documentation\r\n\r\n* Doc update for `torch.fx` ([#53674](https://github.com/pytorch/pytorch/pull/53674))\r\n* Fix `distributed.rpc.options.TensorPipeRpcBackendOptions.set_device_map` ([#53508](https://github.com/pytorch/pytorch/pull/53508))\r\n* Update example for `nn.LSTMCell` ([#51983](https://github.com/pytorch/pytorch/pull/51983))\r\n* Update doc for the `padding_idx` argument for `nn.Embedding` ([#53809](https://github.com/pytorch/pytorch/pull/53809))\r\n* Update general doc template ([#54141](https://github.com/pytorch/pytorch/pull/54141))\r\n\r\n",
+      "new_release": false,
+      "id": 2
+    },
+    {
+      "url": "https://github.com/dromara/Jinx",
+      "title": "Jinx",
+      "owner": "dromara",
+      "release_date": null,
+      "body": "",
+      "new_release": false,
+      "id": 3
+    }
+  ]
 }

@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react'
 import { Octokit } from 'octokit';
 import SearchEntry from './SearchEntry'
 
-const Search = ({onAdd}) => {
+const Search = ({ onAdd }) => {
     const octokit = new Octokit();
-    
+
     const [query, setQuery] = useState("");
     const [searchResults, setSearchResults] = useState([]);
     // const [showResults, SetShowResults] = useState(false);
@@ -18,7 +18,7 @@ const Search = ({onAdd}) => {
     useEffect(() => {
         const timeOutId = setTimeout(() => handleGetRepositories(query), 500);
         return () => clearTimeout(timeOutId);
-      }, [query]);
+    }, [query]);
 
     const getRepositories = (searchTerm) => {
         octokit.request('GET /search/repositories', {
@@ -27,7 +27,6 @@ const Search = ({onAdd}) => {
         }).then(
             (response) => {
                 setSearchResults(Object.values(response["data"]["items"]).slice(0, 6))
-                console.log(Object.values(response["data"]["items"]))
             }
         ).catch((error) => {
             console.log(error)
@@ -41,23 +40,23 @@ const Search = ({onAdd}) => {
         }
 
     }
-  
 
-  
+
+
     return (
-      <>
-        <input
-          type="text"
-          value={query}
-          onChange={event => setQuery(event.target.value)}
-          className='search'
-          placeholder="Search For Repositories (ie 'gh-repository-validator')"
-        />
+        <>
+            <input
+                type="text"
+                value={query}
+                onChange={event => setQuery(event.target.value)}
+                className='search'
+                placeholder="Search For Repositories (ie 'gh-repository-validator')"
+            />
 
-        {searchResults.map((repo) => (
-            <SearchEntry key={repo.id} repo={repo} onAdd={onAdd} clearSearch={clearSearch}/>
-        ))}
-      </>
+            {searchResults.map((repo) => (
+                <SearchEntry key={repo.id} repo={repo} onAdd={onAdd} clearSearch={clearSearch} />
+            ))}
+        </>
     );
 }
 

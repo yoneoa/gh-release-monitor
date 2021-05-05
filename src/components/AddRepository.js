@@ -40,16 +40,15 @@ const AddRepository = ({ onAdd }) => {
             repo: title
         }).then(
             (response) => {
-            if (response.data.length > 0) {
-                release_date = response.data[0]['published_at']
-                body = response.data[0]['body']
-            }
-            onAdd({ url, title, owner, release_date, body, new_release});
-            setUrl('');
-            console.log(response)
+                if (response.data.length > 0) {
+                    release_date = response.data[0]['published_at']
+                    body = response.data[0]['body']
+                }
+                onAdd({ url, title, owner, release_date, body, new_release });
+                setUrl('');
 
             }
-        ).catch((error) =>{
+        ).catch((error) => {
             alert(error)
             console.log(error)
         });
