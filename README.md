@@ -25,4 +25,4 @@ In another terminal, run `npm start` to start the react server.
 Open [http://localhost:3006](http://localhost:3006) to view it in the browser.
 
 
-
+Thanks!
